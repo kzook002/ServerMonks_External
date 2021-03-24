@@ -16,7 +16,7 @@ spec:
         app: events-external
     spec:
       containers:
-      - image: kzook/external:v0.1
+      - image: jsong941/external:v1.1
         name: events-external
         imagePullPolicy: "Always"
         env:
