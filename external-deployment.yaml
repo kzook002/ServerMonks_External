@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: events-external
+  name: events-external
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: events-external
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: events-external
+    spec:
+      containers:
+      - image: shivbirkaur/shivexternal-image:v1.1
+        name: events-external
+        imagePullPolicy: "Always"
+        env:
+        - name: SERVER
+          value: "http://events-internal"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "0.1"
+          limits:
+            memory: "256Mi"
+            cpu: "0.2"
+status: {}
