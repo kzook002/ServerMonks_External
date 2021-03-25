@@ -27,7 +27,7 @@ describe('GET /', function () {
         if (err) {
           return done(err);
         }
-        chai.assert.isTrue(res.text.includes("<h1>Welcome to ServerMonks application v2 3/23/2021</h1>"));
+        chai.assert.isTrue(res.text.includes("<h1>Welcome to ServerMonks application v2 3/24/2021</h1>"));
         return done();
       });
 
